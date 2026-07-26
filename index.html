@@ -111,27 +111,67 @@
         <div class="container hero-commons reveal" id="commons" aria-label="Interactive research lenses">
           <div class="hero-commons-topline">
             <p class="section-index" data-i18n="commons.index">Research Interest</p>
-            <p data-i18n="commons.note">Click to reshape the question</p>
+            <p data-i18n="commons.note">Drag the sheep or choose a stop</p>
           </div>
 
-          <div class="hero-lenses" role="group" aria-label="Research lenses">
-            <button class="hero-lens is-active" type="button" data-commons-theme="criminology" aria-pressed="true">
-              <span>01</span><strong data-i18n="commons.node.criminology">Criminology</strong>
-            </button>
-            <button class="hero-lens" type="button" data-commons-theme="law" aria-pressed="false">
-              <span>02</span><strong data-i18n="commons.node.law">Empirical Law</strong>
-            </button>
-            <button class="hero-lens" type="button" data-commons-theme="decision" aria-pressed="false">
-              <span>03</span><strong data-i18n="commons.node.decision">Decision-Making</strong>
-            </button>
-            <button class="hero-lens" type="button" data-commons-theme="hai" aria-pressed="false">
-              <span>04</span><strong data-i18n="commons.node.hai">Human–AI Interaction</strong>
-            </button>
+          <div class="interest-wheel" id="interest-wheel">
+            <div class="interest-rail-wrap">
+              <div class="interest-rail" aria-hidden="true">
+                <span class="interest-rail-fill"></span>
+                <span class="interest-station interest-station-1"></span>
+                <span class="interest-station interest-station-2"></span>
+                <span class="interest-station interest-station-3"></span>
+                <span class="interest-station interest-station-4"></span>
+                <span class="interest-sheep">
+                  <svg viewBox="0 0 74 54" role="img" aria-label="Sheep">
+                    <g class="sheep-wool">
+                      <circle cx="27" cy="25" r="13"></circle>
+                      <circle cx="40" cy="20" r="14"></circle>
+                      <circle cx="50" cy="29" r="13"></circle>
+                      <circle cx="35" cy="32" r="15"></circle>
+                    </g>
+                    <path class="sheep-leg" d="M29 38v8M47 38v8"></path>
+                    <path class="sheep-face" d="M52 20c8 0 13 5 13 12s-5 12-13 12c-5 0-9-4-9-12s4-12 9-12Z"></path>
+                    <path class="sheep-ear" d="M55 22c4-5 8-5 10-2-2 4-6 5-10 2ZM46 22c-3-4-6-4-8-1 2 3 5 4 8 1Z"></path>
+                    <circle class="sheep-eye" cx="56" cy="30" r="1.4"></circle>
+                  </svg>
+                </span>
+              </div>
+              <input
+                class="interest-range"
+                id="interest-range"
+                type="range"
+                min="0"
+                max="3"
+                step="1"
+                value="0"
+                aria-label="Choose a research interest"
+                aria-valuetext="Criminology"
+              />
+            </div>
+
+            <div class="interest-stops" role="group" aria-label="Research interests">
+              <button class="interest-stop is-active" type="button" data-commons-theme="criminology" aria-pressed="true">
+                <span>01</span><strong data-i18n="commons.node.criminology">Criminology</strong>
+              </button>
+              <button class="interest-stop" type="button" data-commons-theme="law" aria-pressed="false">
+                <span>02</span><strong data-i18n="commons.node.law">Empirical Law</strong>
+              </button>
+              <button class="interest-stop" type="button" data-commons-theme="decision" aria-pressed="false">
+                <span>03</span><strong data-i18n="commons.node.decision">Decision-Making</strong>
+              </button>
+              <button class="interest-stop" type="button" data-commons-theme="hai" aria-pressed="false">
+                <span>04</span><strong data-i18n="commons.node.hai">Human–AI Interaction</strong>
+              </button>
+            </div>
           </div>
 
-          <div class="hero-commons-content" aria-live="polite">
+          <div class="hero-commons-content interest-story" aria-live="polite">
             <div class="hero-question">
-              <p class="commons-panel-label" id="commons-label">Criminology &amp; criminal justice</p>
+              <div class="interest-story-heading">
+                <p class="commons-panel-label" id="commons-label">Criminology &amp; criminal justice</p>
+                <span class="interest-count" id="commons-count">01 / 04</span>
+              </div>
               <h2 id="commons-question">How do places, institutions, and social contexts shape crime and safety?</h2>
             </div>
             <div class="hero-question-detail">
@@ -140,14 +180,6 @@
               </p>
               <div class="commons-tags" id="commons-tags" aria-label="Related concepts">
                 <span>Routine activity</span><span>Crime &amp; place</span><span>Prevention</span>
-              </div>
-              <div class="commons-actions">
-                <button class="button button-primary" id="commons-next" type="button">
-                  <span data-i18n="commons.next">Next lens</span> <span aria-hidden="true">↻</span>
-                </button>
-                <a class="button button-quiet" id="commons-contribute" href="mailto:zhy11262021@163.com?subject=A%20research%20question">
-                  <span data-i18n="commons.contribute">Share a question</span> <span aria-hidden="true">↗</span>
-                </a>
               </div>
             </div>
           </div>

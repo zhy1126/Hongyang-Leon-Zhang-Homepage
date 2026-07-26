@@ -39,7 +39,7 @@ const zhTranslations = {
   "methods.four": "大语言模型辅助研究",
   "commons.index": "研究兴趣",
   "commons.title": "四个视角，共同追问。",
-  "commons.note": "点击，重构问题",
+  "commons.note": "拖动小羊，或选择一个站点",
   "commons.center_top": "开放的",
   "commons.center_main": "研究<br />共创空间",
   "commons.node.criminology": "犯罪学",
@@ -95,12 +95,14 @@ const zhTranslations = {
 const i18nNodes = document.querySelectorAll("[data-i18n]");
 const languageButtons = document.querySelectorAll("[data-lang]");
 const commonsNodes = document.querySelectorAll("[data-commons-theme]");
-const commonsNext = document.querySelector("#commons-next");
 const commonsLabel = document.querySelector("#commons-label");
 const commonsQuestion = document.querySelector("#commons-question");
 const commonsDescription = document.querySelector("#commons-description");
 const commonsTags = document.querySelector("#commons-tags");
-const commonsContribute = document.querySelector("#commons-contribute");
+const commonsCount = document.querySelector("#commons-count");
+const interestWheel = document.querySelector("#interest-wheel");
+const interestRange = document.querySelector("#interest-range");
+const interestStory = document.querySelector(".interest-story");
 
 i18nNodes.forEach((node) => {
   node.dataset.en = node.innerHTML;
@@ -189,10 +191,12 @@ const renderCommons = (theme) => {
   activeCommonsTheme = theme;
   const language = document.documentElement.lang === "zh-CN" ? "zh" : "en";
   const content = commonsThemes[theme][language];
+  const themeIndex = commonsThemeOrder.indexOf(theme);
 
   if (commonsLabel) commonsLabel.textContent = content.label;
   if (commonsQuestion) commonsQuestion.textContent = content.question;
   if (commonsDescription) commonsDescription.textContent = content.description;
+  if (commonsCount) commonsCount.textContent = `${String(themeIndex + 1).padStart(2, "0")} / 04`;
   if (commonsTags) {
     commonsTags.replaceChildren(
       ...content.tags.map((tag) => {
@@ -208,14 +212,22 @@ const renderCommons = (theme) => {
     node.classList.toggle("is-active", isActive);
     node.setAttribute("aria-pressed", String(isActive));
   });
-};
 
-const updateCommunityLink = (isChinese) => {
-  if (!commonsContribute) return;
-  const title = isChinese ? "研究问题：" : "Research question: ";
-  commonsContribute.href = `https://github.com/zhy1126/Hongyang-Leon-Zhang-Homepage/issues/new?template=research-question.yml&title=${encodeURIComponent(title)}`;
-  commonsContribute.target = "_blank";
-  commonsContribute.rel = "noreferrer";
+  if (interestWheel) {
+    interestWheel.style.setProperty("--interest-position", `${(themeIndex / (commonsThemeOrder.length - 1)) * 100}%`);
+    interestWheel.dataset.activeTheme = theme;
+  }
+
+  if (interestRange) {
+    interestRange.value = String(themeIndex);
+    interestRange.setAttribute("aria-valuetext", content.label);
+  }
+
+  if (interestStory) {
+    interestStory.classList.remove("is-changing");
+    void interestStory.offsetWidth;
+    interestStory.classList.add("is-changing");
+  }
 };
 
 const applyLanguage = (language, updateUrl = true) => {
@@ -249,11 +261,11 @@ const applyLanguage = (language, updateUrl = true) => {
   document.querySelector(".hero-portrait")?.setAttribute("aria-label", isChinese ? "张宏扬的肖像照片" : "Portrait of Hongyang Zhang");
   document.querySelector(".inline-meta")?.setAttribute("aria-label", isChinese ? "研究方法" : "Research methods");
   document.querySelector(".profile-photo")?.setAttribute("alt", isChinese ? "张宏扬的肖像照片" : "Portrait of Hongyang Zhang");
-  document.querySelector(".hero-lenses")?.setAttribute("aria-label", isChinese ? "交互式研究方向" : "Interactive research lenses");
+  document.querySelector(".interest-stops")?.setAttribute("aria-label", isChinese ? "研究兴趣" : "Research interests");
+  interestRange?.setAttribute("aria-label", isChinese ? "选择研究兴趣" : "Choose a research interest");
   commonsTags?.setAttribute("aria-label", isChinese ? "相关概念" : "Related concepts");
 
   renderCommons(activeCommonsTheme);
-  updateCommunityLink(isChinese);
 
   saveLanguage(activeLanguage);
 
@@ -277,9 +289,8 @@ commonsNodes.forEach((node) => {
   node.addEventListener("click", () => renderCommons(node.dataset.commonsTheme));
 });
 
-commonsNext?.addEventListener("click", () => {
-  const currentIndex = commonsThemeOrder.indexOf(activeCommonsTheme);
-  renderCommons(commonsThemeOrder[(currentIndex + 1) % commonsThemeOrder.length]);
+interestRange?.addEventListener("input", () => {
+  renderCommons(commonsThemeOrder[Number(interestRange.value)]);
 });
 
 const requestedLanguage = new URLSearchParams(window.location.search).get("lang");
