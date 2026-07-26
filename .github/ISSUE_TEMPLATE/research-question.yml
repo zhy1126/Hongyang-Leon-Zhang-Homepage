@@ -1,0 +1,58 @@
+name: Share a research question
+description: Contribute a question or perspective to the Research Commons.
+title: "Research question: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for joining the Research Commons. A concise question, practical tension, or missing perspective is welcome.
+
+  - type: textarea
+    id: question
+    attributes:
+      label: What question should we explore?
+      description: One clear question is enough.
+      placeholder: How might...
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why does it matter—and to whom?
+      description: Tell us which people, institutions, or communities are affected.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: lens
+    attributes:
+      label: Which research lens is closest?
+      options:
+        - Theory
+        - People and AI
+        - Crime and place
+        - Community or public interest
+        - Something else
+    validations:
+      required: true
+
+  - type: dropdown
+    id: contribution
+    attributes:
+      label: What are you bringing?
+      options:
+        - A research idea
+        - Practitioner experience
+        - Community perspective
+        - Data or methods
+        - A potential collaboration
+        - Curiosity
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Optional context or links
+      description: Add relevant work, examples, or a way to continue the conversation.
