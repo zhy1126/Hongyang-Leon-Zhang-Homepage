@@ -276,13 +276,11 @@ h3 {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  grid-template-areas:
-    "portrait"
-    "copy";
-  gap: 25px;
+  grid-template-columns: minmax(230px, 0.72fr) minmax(0, 1.28fr);
+  grid-template-areas: "portrait copy";
+  gap: clamp(52px, 7vw, 98px);
   align-items: center;
-  justify-items: center;
+  max-width: 1080px;
 }
 
 .hero-copy,
@@ -293,8 +291,8 @@ h3 {
 .hero-copy {
   grid-area: copy;
   width: 100%;
-  max-width: 860px;
-  text-align: center;
+  max-width: 680px;
+  text-align: left;
 }
 
 .eyebrow,
@@ -312,23 +310,39 @@ h3 {
   margin-bottom: 13px;
 }
 
+.hero-name-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+
 .hero h1 {
-  margin-bottom: 10px;
+  margin: 0;
   color: var(--forest);
-  font-size: clamp(3.35rem, 5vw, 4.7rem);
+  font-size: clamp(2.7rem, 4.3vw, 4rem);
   line-height: 1;
 }
 
 html[lang="zh-CN"] .hero h1 {
   max-width: none;
-  font-size: clamp(3.45rem, 5vw, 4.8rem);
+  font-size: clamp(2.8rem, 4.3vw, 4rem);
   letter-spacing: -0.06em;
   line-height: 1.05;
 }
 
+.hero-native-name {
+  color: var(--leaf);
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 1.7vw, 1.55rem);
+  font-weight: 650;
+  letter-spacing: 0.01em;
+}
+
 .hero-statement {
-  max-width: 650px;
-  margin: 0 auto 15px;
+  max-width: 620px;
+  margin: 0 0 15px;
   color: var(--leaf);
   font-family: var(--serif);
   font-size: clamp(1.48rem, 2.2vw, 2rem);
@@ -336,35 +350,50 @@ html[lang="zh-CN"] .hero h1 {
 }
 
 .hero-lede {
-  max-width: 730px;
-  margin: 0 auto 25px;
+  max-width: 660px;
+  margin: 0 0 25px;
   color: #43564b;
   font-family: var(--serif);
   font-size: clamp(1rem, 1.45vw, 1.18rem);
   line-height: 1.62;
 }
 
+.hero-profile-panel {
+  padding: 22px 25px 24px;
+  background: rgba(250, 252, 247, 0.76);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 18px 48px rgba(33, 81, 55, 0.07);
+}
+
+.hero-panel-label {
+  margin-bottom: 13px;
+  color: var(--leaf);
+  font-size: 0.72rem;
+  font-weight: 760;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
 .hero-education {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  max-width: 790px;
-  padding: 17px 0;
-  margin: 0 auto 22px;
-  border-block: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0 0 18px;
 }
 
 .hero-education-item {
   display: flex;
   min-width: 0;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .hero-education-item + .hero-education-item {
-  padding-left: 24px;
-  margin-left: 24px;
-  border-left: 1px solid var(--line);
+  padding-top: 14px;
+  margin-top: 14px;
+  border-top: 1px solid var(--line);
 }
 
 .education-years {
@@ -388,11 +417,45 @@ html[lang="zh-CN"] .hero h1 {
   line-height: 1.45;
 }
 
-.hero-actions {
+.hero-contact-line {
+  padding-top: 16px;
+  margin: 0 0 13px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  font-size: 0.88rem;
+}
+
+.hero-contact-line a {
+  color: var(--forest);
+  text-decoration-color: rgba(57, 115, 87, 0.32);
+  text-underline-offset: 3px;
+}
+
+.hero-profile-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  justify-content: center;
+  gap: 8px 15px;
+}
+
+.hero-profile-links a {
+  color: var(--leaf);
+  font-size: 0.8rem;
+  font-weight: 720;
+  text-decoration: none;
+}
+
+.hero-profile-links a::before {
+  content: "[";
+}
+
+.hero-profile-links a::after {
+  content: "]";
+}
+
+.hero-profile-links a:hover {
+  color: var(--forest);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .button {
@@ -436,30 +499,30 @@ html[lang="zh-CN"] .hero h1 {
   position: relative;
   grid-area: portrait;
   width: 100%;
-  max-width: 148px;
+  max-width: 286px;
   margin: 0;
-  justify-self: center;
+  justify-self: start;
 }
 
 .hero-portrait::before {
   position: absolute;
-  top: -13px;
-  right: -14px;
+  top: -18px;
+  right: -20px;
   z-index: -1;
   width: 86%;
   height: 78%;
   border: 1px solid rgba(57, 115, 87, 0.22);
-  border-radius: 22px;
+  border-radius: 12px;
   content: "";
 }
 
 .portrait-frame {
   position: relative;
-  padding: 6px;
+  padding: 7px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(57, 115, 87, 0.14);
-  border-radius: 22px;
+  border-radius: 10px;
   box-shadow: 0 18px 52px rgba(33, 81, 55, 0.12);
 }
 
@@ -467,7 +530,7 @@ html[lang="zh-CN"] .hero h1 {
   position: absolute;
   inset: 6px;
   background: linear-gradient(180deg, rgba(220, 236, 223, 0.04), rgba(20, 63, 45, 0.1));
-  border-radius: 16px;
+  border-radius: 6px;
   content: "";
   pointer-events: none;
 }
@@ -478,7 +541,7 @@ html[lang="zh-CN"] .hero h1 {
   height: auto;
   aspect-ratio: 226 / 340;
   object-fit: contain;
-  border-radius: 16px;
+  border-radius: 6px;
 }
 
 .portrait-initials {
@@ -704,6 +767,19 @@ html[lang="zh-CN"] .hero h1 {
 
 .news-list {
   border-top: 1px solid var(--line);
+}
+
+.news-list-empty {
+  border-bottom: 1px solid var(--line);
+}
+
+.news-empty {
+  padding: 21px 0;
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--serif);
+  font-size: 0.98rem;
+  font-style: italic;
 }
 
 .news-item {
@@ -1400,16 +1476,39 @@ html[lang="zh-CN"] .hero h1 {
   }
 
   .hero-grid {
-    gap: 23px;
+    grid-template-areas:
+      "portrait"
+      "copy";
+    gap: 36px;
+    max-width: 720px;
+  }
+
+  .hero-copy {
+    max-width: 720px;
+    text-align: center;
+  }
+
+  .hero-name-row {
+    justify-content: center;
   }
 
   .hero h1 {
-    font-size: clamp(3.2rem, 8vw, 4.35rem);
+    font-size: clamp(2.85rem, 8vw, 4rem);
   }
 
   .hero-portrait {
-    max-width: 136px;
+    max-width: 220px;
     justify-self: center;
+  }
+
+  .hero-statement,
+  .hero-lede {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .hero-profile-panel {
+    text-align: left;
   }
 
   .hero-commons {
@@ -1592,7 +1691,7 @@ html[lang="zh-CN"] .hero h1 {
   }
 
   .hero h1 {
-    font-size: clamp(2.75rem, 12.5vw, 3.45rem);
+    font-size: clamp(2.45rem, 12vw, 3.2rem);
   }
 
   .hero-education {
@@ -1614,7 +1713,7 @@ html[lang="zh-CN"] .hero h1 {
   }
 
   .hero-portrait {
-    max-width: 118px;
+    max-width: 178px;
     justify-self: center;
   }
 
