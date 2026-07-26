@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zhy1126.github.io/Hongyang-Leon-Zhang-Homepage/sitemap.xml
