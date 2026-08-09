@@ -3,6 +3,7 @@ const nav = document.querySelector(".site-nav");
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelectorAll(".site-nav a");
 const year = document.querySelector("#current-year");
+const backToTop = document.querySelector("#back-to-top");
 
 const zhTranslations = {
   skip: "跳至主要内容",
@@ -83,7 +84,6 @@ const zhTranslations = {
   "contact.index": "04 / 联系",
   "contact.title": "欢迎交流。",
   "contact.body": "欢迎就犯罪学、实证法律研究与以人为本的人工智能展开交流。",
-  "footer.note": "为清晰、好奇与开放的网络而建。",
   "footer.back": "返回顶部",
 };
 
@@ -310,6 +310,11 @@ navToggle?.addEventListener("click", () => {
 });
 
 navLinks.forEach((link) => link.addEventListener("click", closeNavigation));
+
+backToTop?.addEventListener("click", () => {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+});
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") closeNavigation();
