@@ -55,7 +55,7 @@ const zhTranslations = {
   "news.index": "最新 / 动态",
   "news.title": "近期动态",
   "news.prize.date": "2026",
-  "news.prize.text": "很高兴获得 <strong>Manuel López-Rey Graduate Prize</strong>，以表彰在 2025–26 年度犯罪学 MPhil 项目中的最佳学术表现；我在每门课程中均获得 Distinction。",
+  "news.prize.text": "很高兴获得由剑桥大学犯罪学研究所颁发的 <strong>Manuel López-Rey Graduate Prize</strong>，以表彰在 2025–26 年度犯罪学 MPhil 项目中的最佳学术表现；我在每门课程中均获得 Distinction。",
   "research.index": "02 / 研究",
   "research.title": "代表性研究项目",
   "research.note": "当前及近期工作",
@@ -123,13 +123,13 @@ const commonsThemes = {
   criminology: {
     en: {
       label: "Criminology & criminal justice",
-      question: "How do places, institutions, and social contexts shape crime and safety?",
+      question: "How do places, urban environments, and social contexts shape crime and safety?",
       description: "I connect criminological theory with spatial and causal evidence to study when environments prevent, concentrate, or displace harm.",
       tags: ["Routine activity", "Crime & place", "Prevention"],
     },
     zh: {
       label: "犯罪学与刑事司法",
-      question: "空间、制度与社会情境如何共同塑造犯罪与安全？",
+      question: "地点、城市环境与社会情境如何共同塑造犯罪与安全？",
       description: "我将犯罪学理论与空间、因果证据相结合，研究环境何时能够预防、集中或转移伤害。",
       tags: ["日常活动理论", "犯罪与空间", "犯罪预防"],
     },
@@ -137,15 +137,15 @@ const commonsThemes = {
   law: {
     en: {
       label: "Empirical legal studies",
-      question: "How can we measure law as it works in practice—not only as it is written?",
-      description: "I study legal rules, guiding cases, and professional judgment using experiments, text analysis, and computational methods.",
-      tags: ["Legal institutions", "Guiding cases", "Text analysis"],
+      question: "How can we measure law as it works in practice, not only as it is written?",
+      description: "I study legal rules and professional judgment using experiments, text analysis, and computational methods.",
+      tags: ["Legal institutions", "Professional judgment", "Text analysis"],
     },
     zh: {
       label: "实证法律研究",
       question: "如何测量实践中真实运行的法律，而不只是文本中的法律？",
-      description: "我运用实验、文本分析与计算方法，研究法律规则、指导性案例与专业判断。",
-      tags: ["法律制度", "指导性案例", "文本分析"],
+      description: "我运用实验、文本分析与计算方法，研究法律规则与专业判断。",
+      tags: ["法律制度", "专业判断", "文本分析"],
     },
   },
   decision: {
