@@ -19,6 +19,7 @@ const zhTranslations = {
   "hero.education_label": "教育背景",
   "hero.email_label": "邮箱",
   "education.cambridge_degree": "犯罪学哲学硕士（MPhil）",
+  "education.cambridge_distinction": "Distinction（优异）",
   "education.cambridge_school": "剑桥大学",
   "education.zuel_degree": "LL.B.",
   "education.zuel_school": "中南财经政法大学",
