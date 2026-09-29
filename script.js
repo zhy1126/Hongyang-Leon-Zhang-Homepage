@@ -34,7 +34,7 @@ const zhTranslations = {
   "about.index": "01 / 关于",
   "about.title": "理论驱动，AI 赋能。",
   "about.lede": "我的研究位于犯罪学、人机交互与计算社会科学的交叉地带。我希望开展由理论驱动、由人工智能赋能的跨学科研究，用以理解并改善高风险情境中的人类决策。",
-  "about.body": "我拥有剑桥大学犯罪学哲学硕士（MPhil）学位，以及中南财经政法大学法学学士（LL.B.）学位。我的研究结合实验、空间分析、可解释机器学习与混合研究方法，使复杂的决策过程变得可观察、可测量。",
+  "about.body": "我拥有剑桥大学犯罪学哲学硕士（MPhil）学位，以及中南财经政法大学法学学士（LL.B.）学位。我的研究结合实验、空间分析、可解释机器学习与大语言模型模拟，考察人们如何在社会与制度情境中作出决策。",
   "methods.one": "实验研究",
   "methods.two": "空间分析",
   "methods.three": "R 与 Python",
@@ -54,6 +54,11 @@ const zhTranslations = {
   "commons.footnote": "点击后会在 GitHub 项目中打开一份结构化的社区问题表单。",
   "news.index": "最新 / 动态",
   "news.title": "近期动态",
+  "news.crimsense.date": "2026.09",
+  "news.crimsense.text": "我正在开展 <a href=\"#crimsense\">CrimSense</a> 项目，以犯罪学理论指导模拟，研究人与环境的交互及不同政策干预下的行为响应。",
+  "project.crimsense.kicker": "计算犯罪学 · 大语言模型智能体",
+  "project.crimsense.title": "CrimSense：理论指导的犯罪模拟",
+  "project.crimsense.body": "以情境行动理论（Situational Action Theory）为基础的多智能体模拟框架。通过区分行动选项的形成、情境监护评估与后续选择，考察个体倾向如何与环境相互作用。当前研究比较城市犯罪分布、人与环境的交互，以及警务、居民合作和环境改善干预下的行为响应。",
   "news.prize.date": "2026",
   "news.prize.text": "很高兴获得由剑桥大学犯罪学研究所颁发的 <strong>Manuel López-Rey Graduate Prize</strong>，以表彰在 2025–26 年度犯罪学 MPhil 项目中的最佳学术表现；我在每门课程中均获得 Distinction。",
   "research.index": "02 / 研究",
@@ -241,7 +246,7 @@ const applyLanguage = (language, updateUrl = true) => {
     button.setAttribute("aria-pressed", String(isActive));
   });
 
-  const title = isChinese ? "张宏扬｜犯罪学研究者" : "Hongyang Zhang | Criminology Researcher";
+  const title = isChinese ? "张宏扬｜学术主页" : "Hongyang (Leon) Zhang | Academic Homepage";
   const description = isChinese
     ? "张宏扬的学术主页：犯罪学、实证法律研究、决策与人机交互。"
     : "Hongyang Zhang — criminology researcher working on empirical legal studies, decision-making, and human–AI interaction.";
@@ -250,6 +255,7 @@ const applyLanguage = (language, updateUrl = true) => {
   document.querySelector('meta[property="og:title"]')?.setAttribute("content", title);
   document.querySelector('meta[property="og:description"]')?.setAttribute("content", description);
 
+  document.querySelector(".profile")?.setAttribute("aria-label", isChinese ? "个人信息" : "Profile");
   nav?.setAttribute("aria-label", isChinese ? "主导航" : "Main navigation");
   document.querySelector(".lang-switch")?.setAttribute("aria-label", isChinese ? "语言选择" : "Language");
   document.querySelector(".hero-education")?.setAttribute("aria-label", isChinese ? "教育背景" : "Education");

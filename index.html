@@ -11,359 +11,163 @@
       name="description"
       content="Hongyang (Leon) Zhang — criminology researcher working on empirical legal studies, decision-making, and human–AI interaction."
     />
-    <meta name="theme-color" content="#eef6ef" />
-    <meta property="og:title" content="Hongyang (Leon) Zhang | Criminology Researcher" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta property="og:title" content="Hongyang (Leon) Zhang | Academic Homepage" />
     <meta
       property="og:description"
       content="Research in criminology, empirical legal studies, decision-making, and human–AI interaction."
     />
     <meta property="og:type" content="website" />
-    <title>Hongyang (Leon) Zhang | Criminology Researcher</title>
+    <title>Hongyang (Leon) Zhang | Academic Homepage</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css?v=20260809-8" />
-    <script src="script.js?v=20260809-8" defer></script>
+    <link rel="stylesheet" href="academic.css?v=20260929-1" />
+    <script src="script.js?v=20260929-1" defer></script>
   </head>
-  <body>
+  <body id="top">
     <a class="skip-link" href="#main-content" data-i18n="skip">Skip to content</a>
-
-    <header class="site-header" id="top">
-      <div class="container header-inner">
-        <a class="wordmark" href="#top" aria-label="Hongyang Leon Zhang, home">
-          <span class="wordmark-mark">HZ</span>
-          <span>Hongyang (Leon) Zhang</span>
-        </a>
-
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-          <span class="sr-only">Toggle navigation</span>
-          <span></span><span></span>
-        </button>
-
-        <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+    <div class="academic-layout">
+      <aside class="profile" aria-label="Profile">
+        <figure class="hero-portrait">
+          <img class="profile-photo" src="assets/Hongyang_Zhang.jpg" alt="Portrait of Hongyang Leon Zhang" width="148" height="148" />
+        </figure>
+        <h1 data-i18n="hero.name">Hongyang (Leon) Zhang</h1>
+        <p class="native-name" data-i18n="hero.native_name">张宏扬</p>
+        <div class="profile-affiliation">
+          <p data-i18n="education.cambridge_degree">MPhil in Criminology</p>
+          <p data-i18n="education.cambridge_school">University of Cambridge</p>
+        </div>
+        <a class="email" href="mailto:zhy11262021@163.com">zhy11262021@163.com</a>
+        <div class="profile-links">
+          <a href="mailto:zhy11262021@163.com" aria-label="Email Hongyang Zhang">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 6 9 7 9-7" /></svg>
+            <span data-i18n="hero.email_label">Email</span>
+          </a>
+          <a href="https://github.com/zhy1126" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="assets/Hongyang_Zhang_CV.pdf" target="_blank" rel="noreferrer" data-i18n="nav.cv">CV</a>
+        </div>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" data-lang="en" class="is-active" aria-pressed="true">EN</button>
+          <span aria-hidden="true">/</span>
+          <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+        </div>
+        <nav class="site-nav" aria-label="Main navigation">
           <a href="#about" data-i18n="nav.about">About</a>
           <a href="#news" data-i18n="nav.news">News</a>
           <a href="#research" data-i18n="nav.research">Research</a>
           <a href="#publications" data-i18n="nav.publications">Publications</a>
-          <a class="nav-cv" href="assets/Hongyang_Zhang_CV.pdf" target="_blank" rel="noreferrer">
-            CV <span aria-hidden="true">↗</span>
-          </a>
-          <div class="lang-switch" role="group" aria-label="Language">
-            <button type="button" class="is-active" data-lang="en" aria-pressed="true">EN</button>
-            <span aria-hidden="true">/</span>
-            <button type="button" data-lang="zh" aria-pressed="false">中文</button>
-          </div>
+          <a href="#education" data-i18n="hero.education_label">Education</a>
         </nav>
-      </div>
-    </header>
+      </aside>
 
-    <main id="main-content">
-      <section class="hero section-shell" aria-labelledby="hero-title">
-        <div class="container hero-grid">
-          <figure class="hero-portrait reveal" aria-label="Portrait of Hongyang Leon Zhang">
-            <div class="portrait-frame">
-              <img
-                class="profile-photo"
-                src="assets/Hongyang_Zhang.jpg"
-                alt="Portrait of Hongyang Leon Zhang"
-                width="226"
-                height="340"
-              />
-            </div>
-          </figure>
+      <main id="main-content">
+        <section id="about" aria-labelledby="about-title">
+          <h2 id="about-title" data-i18n="nav.about">About Me</h2>
+          <p class="intro" data-i18n="about.lede">My work sits at the intersection of criminology, human–computer interaction, and computational social science. I pursue interdisciplinary research that uses AI to study—and improve—high-stakes human decision-making, while keeping theory at the center of research design and interpretation.</p>
+          <p data-i18n="about.body">I hold an MPhil in Criminology from the University of Cambridge and an LL.B. from Zhongnan University of Economics and Law. My research combines experiments, spatial analysis, interpretable machine learning, and LLM-based simulation to study how people make decisions in social and institutional settings.</p>
+          <p class="welcome" data-i18n="contact.body">I welcome conversations about criminology, empirical legal research, and human-centered AI.</p>
+        </section>
 
-          <div class="hero-copy reveal">
-            <div class="hero-name-row">
-              <h1 id="hero-title" data-i18n="hero.name">Hongyang (Leon) Zhang</h1>
-              <span class="hero-native-name" data-i18n="hero.native_name">张宏扬</span>
-            </div>
-
-            <div class="hero-profile-panel">
-              <p class="hero-panel-label" data-i18n="hero.education_label">Education</p>
-              <div class="hero-education" aria-label="Education">
-                <div class="hero-education-item">
-                  <span class="education-degree">
-                    <span data-i18n="education.cambridge_degree">MPhil in Criminology</span>
-                    <span class="education-distinction" data-i18n="education.cambridge_distinction">with Distinction</span>
-                  </span>
-                  <span class="education-school" data-i18n="education.cambridge_school">University of Cambridge</span>
-                  <span class="education-years">2025 — 2026</span>
-                </div>
-                <div class="hero-education-item">
-                  <span class="education-degree" data-i18n="education.zuel_degree">LL.B.</span>
-                  <span class="education-school" data-i18n="education.zuel_school">Zhongnan University of Economics and Law</span>
-                  <span class="education-years">2021 — 2025</span>
-                </div>
-              </div>
-
-              <div class="hero-profile-footer">
-                <p class="hero-contact-line">
-                  <span data-i18n="hero.email_label">Email</span>:
-                  <a href="mailto:zhy11262021@163.com">zhy11262021@163.com</a>
-                </p>
-                <div class="hero-profile-links" aria-label="Profile links">
-                  <a href="#research" data-i18n="hero.research_button">Research</a>
-                  <a href="assets/Hongyang_Zhang_CV.pdf" target="_blank" rel="noreferrer" data-i18n="nav.cv">CV</a>
-                </div>
-              </div>
-            </div>
+        <section id="news" aria-labelledby="news-title">
+          <h2 id="news-title" data-i18n="nav.news">News</h2>
+          <div class="dated-row news-entry">
+            <time datetime="2026-09" data-i18n="news.crimsense.date">Sep 2026</time>
+            <p data-i18n="news.crimsense.text">I am developing <a href="#crimsense">CrimSense</a>, a theory-guided crime simulation framework for studying person–environment interactions and responses to policy interventions.</p>
           </div>
-        </div>
-
-        <div class="container hero-commons reveal" id="commons" aria-label="Interactive research lenses">
-          <div class="hero-commons-topline">
-            <p class="section-index" data-i18n="commons.index">Research Interest</p>
-            <p data-i18n="commons.note">Drag the sheep or choose a stop</p>
+          <div class="dated-row news-entry">
+            <time datetime="2026">2026</time>
+            <p data-i18n="news.prize.text">I’m delighted to have received the <strong>Manuel López-Rey Graduate Prize</strong>, awarded by the Institute of Criminology at the University of Cambridge, for the best academic performance on the MPhil in Criminology (2025–26), having earned a Distinction in every module.</p>
           </div>
+        </section>
 
-          <div class="interest-wheel" id="interest-wheel">
-            <div class="interest-rail-wrap">
-              <div class="interest-rail" aria-hidden="true">
-                <span class="interest-rail-fill"></span>
-                <span class="interest-station interest-station-1"></span>
-                <span class="interest-station interest-station-2"></span>
-                <span class="interest-station interest-station-3"></span>
-                <span class="interest-station interest-station-4"></span>
-                <span class="interest-sheep">
-                  <svg viewBox="0 0 74 54" role="img" aria-label="Sheep">
-                    <g class="sheep-wool">
-                      <circle cx="27" cy="25" r="13"></circle>
-                      <circle cx="40" cy="20" r="14"></circle>
-                      <circle cx="50" cy="29" r="13"></circle>
-                      <circle cx="35" cy="32" r="15"></circle>
-                    </g>
-                    <path class="sheep-leg" d="M29 38v8M47 38v8"></path>
-                    <path class="sheep-face" d="M52 20c8 0 13 5 13 12s-5 12-13 12c-5 0-9-4-9-12s4-12 9-12Z"></path>
-                    <path class="sheep-ear" d="M55 22c4-5 8-5 10-2-2 4-6 5-10 2ZM46 22c-3-4-6-4-8-1 2 3 5 4 8 1Z"></path>
-                    <circle class="sheep-eye" cx="56" cy="30" r="1.4"></circle>
-                  </svg>
-                </span>
-              </div>
-              <input
-                class="interest-range"
-                id="interest-range"
-                type="range"
-                min="0"
-                max="3"
-                step="1"
-                value="0"
-                aria-label="Choose a research interest"
-                aria-valuetext="Criminology"
-              />
-            </div>
-
-            <div class="interest-stops" role="group" aria-label="Research interests">
-              <button class="interest-stop is-active" type="button" data-commons-theme="criminology" aria-pressed="true">
-                <span>01</span><strong data-i18n="commons.node.criminology">Criminology</strong>
-              </button>
-              <button class="interest-stop" type="button" data-commons-theme="law" aria-pressed="false">
-                <span>02</span><strong data-i18n="commons.node.law">Empirical Legal Studies</strong>
-              </button>
-              <button class="interest-stop" type="button" data-commons-theme="decision" aria-pressed="false">
-                <span>03</span><strong data-i18n="commons.node.decision">Decision-Making</strong>
-              </button>
-              <button class="interest-stop" type="button" data-commons-theme="hai" aria-pressed="false">
-                <span>04</span><strong data-i18n="commons.node.hai">Human–AI Interaction</strong>
-              </button>
-            </div>
+        <section id="interests" aria-labelledby="interests-title">
+          <h2 id="interests-title" data-i18n="commons.index">Research Interests</h2>
+          <div class="interest-stops" role="group" aria-label="Research interests">
+            <button type="button" data-commons-theme="criminology" class="is-active" aria-pressed="true" data-i18n="commons.node.criminology">Criminology</button>
+            <button type="button" data-commons-theme="law" aria-pressed="false" data-i18n="commons.node.law">Empirical Legal Studies</button>
+            <button type="button" data-commons-theme="decision" aria-pressed="false" data-i18n="commons.node.decision">Decision-Making</button>
+            <button type="button" data-commons-theme="hai" aria-pressed="false" data-i18n="commons.node.hai">Human–AI Interaction</button>
           </div>
-
-          <div class="hero-commons-content interest-story" aria-live="polite">
-            <div class="hero-question">
-              <div class="interest-story-heading">
-                <p class="commons-panel-label" id="commons-label">Criminology &amp; criminal justice</p>
-                <span class="interest-count" id="commons-count">01 / 04</span>
-              </div>
-              <h2 id="commons-question">How do places, institutions, and social contexts shape crime and safety?</h2>
-            </div>
-            <div class="hero-question-detail">
-              <p id="commons-description">
-                I connect criminological theory with spatial and causal evidence to study when environments prevent, concentrate, or displace harm.
-              </p>
-              <div class="commons-tags" id="commons-tags" aria-label="Related concepts">
-                <span>Routine activity</span><span>Crime &amp; place</span><span>Prevention</span>
-              </div>
-            </div>
+          <div class="interest-story" aria-live="polite">
+            <h3 id="commons-question">How do places, urban environments, and social contexts shape crime and safety?</h3>
+            <p id="commons-description">I connect criminological theory with spatial and causal evidence to study when environments prevent, concentrate, or displace harm.</p>
+            <div id="commons-tags" class="commons-tags" aria-label="Related concepts"><span>Routine activity</span><span>Crime &amp; place</span><span>Prevention</span></div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="news-strip" id="news" aria-labelledby="news-title">
-        <div class="container news-inner">
-          <div class="news-heading reveal">
-            <div>
-              <p class="section-index" data-i18n="news.index">Latest / News</p>
-              <h2 id="news-title" data-i18n="news.title">Recent updates</h2>
-            </div>
-          </div>
-          <div class="news-list">
-            <article class="news-item reveal">
-              <time datetime="2026" data-i18n="news.prize.date">2026</time>
-              <p data-i18n="news.prize.text">
-                I’m delighted to have received the <strong>Manuel López-Rey Graduate Prize</strong>, awarded
-                by the Institute of Criminology at the University of Cambridge, for the best academic
-                performance on the MPhil in Criminology (2025–26), having earned a Distinction in every module.
-              </p>
+        <section id="research" aria-labelledby="research-title">
+          <h2 id="research-title" data-i18n="research.title">Selected Research</h2>
+          <div class="research-list">
+            <article class="research-entry" id="crimsense">
+              <p class="entry-type" data-i18n="project.crimsense.kicker">Computational criminology · LLM agents</p>
+              <h3 data-i18n="project.crimsense.title">CrimSense: Theory-Guided Crime Simulation</h3>
+              <p data-i18n="project.crimsense.body">A multi-agent simulation framework grounded in Situational Action Theory. It separates the formation of action alternatives, assessments of situational guardianship, and subsequent choice to examine how personal propensities interact with environments. Current studies compare urban crime patterns, person–environment interactions, and responses to policing, resident cooperation, and environmental improvement.</p>
+              <span class="status" data-i18n="project.status">Ongoing</span>
+            </article>
+            <article class="research-entry">
+              <p class="entry-type" data-i18n="project.one.kicker">Human–AI decision-making · Survey experiment</p>
+              <h3 data-i18n="project.one.title">AI Risk Alerts and Police Decision-Making</h3>
+              <p data-i18n="project.one.body">A preregistered 2 × 2 scenario experiment examining how information density and task type shape police resource allocation, intervention intensity, AI reliance, confidence, and information-search behavior.</p>
+              <span class="status" data-i18n="project.status">Ongoing</span>
+            </article>
+            <article class="research-entry">
+              <p class="entry-type" data-i18n="project.two.kicker">Legal AI · Controlled experiment</p>
+              <h3 data-i18n="project.two.title">The Trojan Horse in the Courtroom</h3>
+              <p data-i18n="project.two.body">Investigating how legal practitioners, law students, and laypeople respond to flawed AI-generated legal advice. The study measures explicit and implicit adoption, confidence, and trust across 222 participants.</p>
+              <span class="status" data-i18n="project.status">Ongoing</span>
+            </article>
+            <article class="research-entry">
+              <p class="entry-type" data-i18n="project.three.kicker">Urban crime · Interpretable ML</p>
+              <h3 data-i18n="project.three.title">Predicting Street Crime in a Rapidly Urbanizing Context</h3>
+              <p data-i18n="project.three.body">A theory-driven analysis of street crime in Shenzhen using XGBoost, SHAP, and partial dependence plots to connect spatial, demographic, and historical predictors with grid-level crime patterns.</p>
+              <span class="status" data-i18n="project.status">Ongoing</span>
+            </article>
+            <article class="research-entry">
+              <p class="entry-type" data-i18n="project.four.kicker">Empirical legal studies · NLP</p>
+              <h3 data-i18n="project.four.title">Detecting the Binding Force of Chinese Guiding Cases</h3>
+              <p data-i18n="project.four.body">Using large language models to detect judicial compliance with—or deviation from—guiding cases, providing a scalable measure of their practical influence beyond formal citation counts.</p>
+              <span class="status" data-i18n="project.status">Ongoing</span>
             </article>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="about section-shell" id="about" aria-labelledby="about-title">
-        <div class="container two-column">
-          <div class="section-heading reveal">
-            <p class="section-index" data-i18n="about.index">01 / About</p>
-            <h2 id="about-title" data-i18n="about.title">Theory-driven, AI-powered.</h2>
-          </div>
-          <div class="prose reveal">
-            <p class="lead-paragraph" data-i18n="about.lede">
-              My work sits at the intersection of criminology, human–computer interaction,
-              and computational social science. I pursue interdisciplinary research that uses
-              AI to study—and improve—high-stakes human decision-making, while keeping theory
-              at the center of research design and interpretation.
-            </p>
-            <p data-i18n="about.body">
-              I hold an MPhil in Criminology from the University of Cambridge and an LL.B.
-              from Zhongnan University of Economics and Law.
-              My research combines experiments, spatial analysis, interpretable machine
-              learning, and mixed methods to make complex decision processes measurable.
-            </p>
-            <div class="inline-meta" aria-label="Research methods">
-              <span data-i18n="methods.one">Experiments</span>
-              <span data-i18n="methods.two">Spatial analysis</span>
-              <span data-i18n="methods.three">R &amp; Python</span>
-              <span data-i18n="methods.four">LLM-assisted research</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="research section-shell tinted" id="research" aria-labelledby="research-title">
-        <div class="container">
-          <div class="section-heading heading-row reveal">
-            <div>
-              <p class="section-index" data-i18n="research.index">02 / Research</p>
-              <h2 id="research-title" data-i18n="research.title">Selected projects</h2>
-            </div>
-            <p class="heading-note" data-i18n="research.note">Current and recent work</p>
-          </div>
-
-          <div class="project-list">
-            <article class="project reveal">
-              <div class="project-number">01</div>
-              <div class="project-body">
-                <p class="project-kicker" data-i18n="project.one.kicker">Human–AI decision-making · Survey experiment</p>
-                <h3 data-i18n="project.one.title">AI Risk Alerts and Police Decision-Making</h3>
-                <p data-i18n="project.one.body">
-                  A preregistered 2 × 2 scenario experiment examining how information density
-                  and task type shape police resource allocation, intervention intensity, AI
-                  reliance, confidence, and information-search behavior.
-                </p>
-              </div>
-              <div class="project-status"><span></span> <span class="status-text" data-i18n="project.status">Ongoing</span></div>
-            </article>
-
-            <article class="project reveal">
-              <div class="project-number">02</div>
-              <div class="project-body">
-                <p class="project-kicker" data-i18n="project.two.kicker">Legal AI · Controlled experiment</p>
-                <h3 data-i18n="project.two.title">The Trojan Horse in the Courtroom</h3>
-                <p data-i18n="project.two.body">
-                  Investigating how legal practitioners, law students, and laypeople respond
-                  to flawed AI-generated legal advice. The study measures explicit and implicit
-                  adoption, confidence, and trust across 222 participants.
-                </p>
-              </div>
-              <div class="project-status"><span></span> <span class="status-text" data-i18n="project.status">Ongoing</span></div>
-            </article>
-
-            <article class="project reveal">
-              <div class="project-number">03</div>
-              <div class="project-body">
-                <p class="project-kicker" data-i18n="project.three.kicker">Urban crime · Interpretable ML</p>
-                <h3 data-i18n="project.three.title">Predicting Street Crime in a Rapidly Urbanizing Context</h3>
-                <p data-i18n="project.three.body">
-                  A theory-driven analysis of street crime in Shenzhen using XGBoost, SHAP,
-                  and partial dependence plots to connect spatial, demographic, and historical
-                  predictors with grid-level crime patterns.
-                </p>
-              </div>
-              <div class="project-status"><span></span> <span class="status-text" data-i18n="project.status">Ongoing</span></div>
-            </article>
-
-            <article class="project reveal">
-              <div class="project-number">04</div>
-              <div class="project-body">
-                <p class="project-kicker" data-i18n="project.four.kicker">Empirical legal studies · NLP</p>
-                <h3 data-i18n="project.four.title">Detecting the Binding Force of Chinese Guiding Cases</h3>
-                <p data-i18n="project.four.body">
-                  Using large language models to detect judicial compliance with—or deviation
-                  from—guiding cases, providing a scalable measure of their practical influence
-                  beyond formal citation counts.
-                </p>
-              </div>
-              <div class="project-status"><span></span> <span class="status-text" data-i18n="project.status">Ongoing</span></div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="publications section-shell" id="publications" aria-labelledby="publications-title">
-        <div class="container two-column publication-layout">
-          <div class="section-heading reveal">
-            <p class="section-index" data-i18n="publications.index">03 / Publications</p>
-            <h2 id="publications-title" data-i18n="publications.title">Published work</h2>
-            <p class="section-aside" data-i18n="publications.note">Peer-reviewed journal articles</p>
-          </div>
-
+        <section id="publications" aria-labelledby="publications-title">
+          <h2 id="publications-title" data-i18n="nav.publications">Publications</h2>
           <ol class="publication-list">
-            <li class="publication reveal">
-              <span class="pub-year">2024</span>
+            <li class="dated-row">
+              <time datetime="2024">2024</time>
               <div>
                 <h3 data-i18n="publication.one.title">Procedural Application of Predictive Investigation in the Digital Intelligence Era</h3>
                 <p class="pub-authors" data-i18n="publication.one.authors">Xiaobing Luan &amp; <strong>Hongyang Zhang</strong></p>
-                <p class="pub-venue" data-i18n="publication.one.venue">
-                  <em>Journal of the Criminal Police University of China</em>, 5, 40–47.
-                </p>
+                <p data-i18n="publication.one.venue"><em>Journal of the Criminal Police University of China</em>, 5, 40–47.</p>
               </div>
             </li>
-            <li class="publication reveal">
-              <span class="pub-year">2023</span>
+            <li class="dated-row">
+              <time datetime="2023">2023</time>
               <div>
                 <h3 data-i18n="publication.two.title">Procedural Control of Law Enforcement Initiation in Predictive Policing Scenarios</h3>
                 <p class="pub-authors" data-i18n="publication.two.authors">Xiaobing Luan &amp; <strong>Hongyang Zhang</strong></p>
-                <p class="pub-venue" data-i18n="publication.two.venue">
-                  <em>Journal of the Criminal Police University of China</em>, 6, 120–128.
-                </p>
+                <p data-i18n="publication.two.venue"><em>Journal of the Criminal Police University of China</em>, 6, 120–128.</p>
               </div>
             </li>
           </ol>
-        </div>
-      </section>
+        </section>
 
-      <section class="contact section-shell" aria-labelledby="contact-title">
-        <div class="container contact-card reveal">
-          <div>
-            <p class="section-index" data-i18n="contact.index">04 / Contact</p>
-            <h2 id="contact-title" data-i18n="contact.title">Let’s exchange ideas.</h2>
+        <section id="education" aria-labelledby="education-title">
+          <h2 id="education-title" data-i18n="hero.education_label">Education</h2>
+          <div class="education-row">
+            <div><h3 data-i18n="education.cambridge_school">University of Cambridge</h3><p><span data-i18n="education.cambridge_degree">MPhil in Criminology</span>, <span data-i18n="education.cambridge_distinction">with Distinction</span></p></div>
+            <span class="years">2025–2026</span>
           </div>
-          <div class="contact-copy">
-            <p data-i18n="contact.body">
-              I welcome conversations about criminology, empirical legal research, and
-              human-centered AI.
-            </p>
-            <a href="mailto:zhy11262021@163.com">zhy11262021@163.com <span aria-hidden="true">↗</span></a>
+          <div class="education-row">
+            <div><h3 data-i18n="education.zuel_school">Zhongnan University of Economics and Law</h3><p data-i18n="education.zuel_degree">LL.B.</p></div>
+            <span class="years">2021–2025</span>
           </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <p>© <span id="current-year">2026</span> Hongyang (Leon) Zhang</p>
-        <button class="back-to-top" id="back-to-top" type="button">
-          <span data-i18n="footer.back">Back to top</span>
-          <span class="back-to-top-icon" aria-hidden="true">↑</span>
-        </button>
-      </div>
-    </footer>
+        </section>
+        <footer>
+          <p>© <span id="current-year">2026</span> Hongyang (Leon) Zhang</p>
+          <button type="button" id="back-to-top" data-i18n="footer.back">Back to top</button>
+        </footer>
+      </main>
+    </div>
   </body>
 </html>

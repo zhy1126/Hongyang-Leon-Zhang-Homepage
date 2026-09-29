@@ -6,10 +6,10 @@ A lightweight bilingual academic homepage for Hongyang Zhang, built with plain H
 
 - English / Simplified Chinese switching with a shareable `?lang=zh` view
 - Responsive layout and accessible mobile navigation
-- Centered editorial-style introduction with prominent About, News, Research, Publications, Honors, and CV navigation
+- Academic two-column layout with a sticky profile, portrait, contact links, CV, and section navigation
 - Compact bilingual news and updates section
-- Interactive **Research Commons** embedded in the opening homepage section, connecting criminology, empirical legal studies, decision-making, and human–AI interaction
-- A community contribution link backed by a structured GitHub Issue form
+- Interactive research interests connecting criminology, empirical legal studies, decision-making, and human–AI interaction
+- Selected research led by the ongoing CrimSense project
 - Downloadable CV and responsive portrait
 - Automatic GitHub Pages deployment through GitHub Actions
 
@@ -41,7 +41,6 @@ For the first deployment:
 2. Open **Settings → Pages** in the GitHub repository.
 3. Under **Build and deployment → Source**, select **GitHub Actions**.
 4. Open **Actions** and wait for `Deploy static site to GitHub Pages` to finish.
-5. Ensure **Settings → General → Features → Issues** is enabled for the Research Commons contribution form.
 
 See `DEPLOY_ZH.md` for the Chinese publishing guide.
 
@@ -52,13 +51,14 @@ The file `site-status.txt` controls what GitHub Pages publishes:
 - `open` publishes the complete academic homepage.
 - `closed` publishes only the bilingual maintenance page while keeping all homepage source files in the repository.
 
-After changing the value, commit and push the file to `main`. GitHub Actions will update the public site automatically. The initial public deployment is intentionally set to `closed`.
+After changing the value, commit and push the file to `main`. GitHub Actions will update the public site automatically. The current site is set to `open`.
 
 ## Update the content
 
 - Main content and project structure: `index.html`
 - Simplified Chinese copy and interactive Research Commons data: `script.js`
-- Colors, typography, layout, and responsive behavior: `styles.css`
+- Homepage colors, typography, layout, and responsive behavior: `academic.css`
+- Error and maintenance page styling: `styles.css`
 - Portrait: replace `assets/Hongyang_Zhang.jpg`, keeping the filename
 - CV: replace `assets/Hongyang_Zhang_CV.pdf`, keeping the filename
 - Community question form: `.github/ISSUE_TEMPLATE/research-question.yml`
@@ -70,4 +70,4 @@ After changing the value, commit and push the file to `main`. GitHub Actions wil
 - Confirm the email address and all dates.
 - Add links or DOIs to publications when available.
 - Check both language versions after editing shared content.
-- Confirm that GitHub Issues is enabled in the repository.
+- Verify the existing `/phd-application-tracker/` page after deployment.
