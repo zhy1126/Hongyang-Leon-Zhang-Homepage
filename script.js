@@ -246,10 +246,12 @@ const applyLanguage = (language, updateUrl = true) => {
     button.setAttribute("aria-pressed", String(isActive));
   });
 
-  const title = isChinese ? "张宏扬｜学术主页" : "Hongyang (Leon) Zhang | Academic Homepage";
+  const title = isChinese
+    ? "张宏扬（Hongyang Leon Zhang）｜学术主页"
+    : "Hongyang Leon Zhang (张宏扬) | Academic Homepage";
   const description = isChinese
-    ? "张宏扬的学术主页：犯罪学、实证法律研究、决策与人机交互。"
-    : "Hongyang Zhang — criminology researcher working on empirical legal studies, decision-making, and human–AI interaction.";
+    ? "张宏扬（Hongyang Leon Zhang）的学术主页。剑桥大学犯罪学 MPhil，研究方向包括计算犯罪学、实证法律研究、决策与人机交互。"
+    : "Hongyang Leon Zhang (张宏扬), Cambridge MPhil in Criminology. Research in computational criminology, empirical legal studies, and human–AI interaction.";
   document.title = title;
   document.querySelector('meta[name="description"]')?.setAttribute("content", description);
   document.querySelector('meta[property="og:title"]')?.setAttribute("content", title);
@@ -259,9 +261,9 @@ const applyLanguage = (language, updateUrl = true) => {
   nav?.setAttribute("aria-label", isChinese ? "主导航" : "Main navigation");
   document.querySelector(".lang-switch")?.setAttribute("aria-label", isChinese ? "语言选择" : "Language");
   document.querySelector(".hero-education")?.setAttribute("aria-label", isChinese ? "教育背景" : "Education");
-  document.querySelector(".hero-portrait")?.setAttribute("aria-label", isChinese ? "张宏扬的肖像照片" : "Portrait of Hongyang Zhang");
+  document.querySelector(".hero-portrait")?.setAttribute("aria-label", isChinese ? "张宏扬（Hongyang Leon Zhang）的肖像照片" : "Portrait of Hongyang Leon Zhang (张宏扬)");
   document.querySelector(".inline-meta")?.setAttribute("aria-label", isChinese ? "研究方法" : "Research methods");
-  document.querySelector(".profile-photo")?.setAttribute("alt", isChinese ? "张宏扬的肖像照片" : "Portrait of Hongyang Zhang");
+  document.querySelector(".profile-photo")?.setAttribute("alt", isChinese ? "张宏扬（Hongyang Leon Zhang）的肖像照片" : "Portrait of Hongyang Leon Zhang (张宏扬)");
   document.querySelector(".interest-stops")?.setAttribute("aria-label", isChinese ? "研究兴趣" : "Research interests");
   interestRange?.setAttribute("aria-label", isChinese ? "选择研究兴趣" : "Choose a research interest");
   commonsTags?.setAttribute("aria-label", isChinese ? "相关概念" : "Related concepts");

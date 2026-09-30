@@ -17,9 +17,7 @@ A lightweight bilingual academic homepage for Hongyang Zhang, built with plain H
 
 Repository: `zhy1126/Hongyang-Leon-Zhang-Homepage`
 
-Expected Pages URL:
-
-`https://zhy1126.github.io/Hongyang-Leon-Zhang-Homepage/`
+Live homepage: [Hongyang Leon Zhang (张宏扬)](https://zhy1126.github.io/Hongyang-Leon-Zhang-Homepage/)
 
 ## Preview locally
 

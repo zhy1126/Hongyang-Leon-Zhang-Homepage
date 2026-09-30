@@ -26,7 +26,7 @@ strong { font-weight: 650; }
 .academic-layout { width: min(1070px, calc(100% - 88px)); margin: 68px auto 0; display: grid; grid-template-columns: 236px minmax(0, 1fr); gap: 76px; align-items: start; }
 .profile { position: sticky; top: 64px; text-align: center; padding-top: 7px; }
 .hero-portrait { margin: 0 0 25px; }
-.profile-photo { display: block; width: 148px; height: 148px; border-radius: 50%; object-fit: cover; object-position: 50% 28%; margin: 0 auto; }
+.profile-photo { display: block; width: 148px; height: 148px; padding: 8px; border-radius: 50%; object-fit: cover; object-position: 50% 0%; margin: 0 auto; background: #f5f7f8; }
 .profile h1 { font-size: 25px; line-height: 1.32; margin: 0 auto 10px; max-width: 235px; }
 .native-name { color: var(--heading); font-family: "Songti SC", STSong, Georgia, serif; font-size: 23px; letter-spacing: 5px; margin-bottom: 22px; }
 html[lang="zh-CN"] .profile h1 { letter-spacing: 3px; }
@@ -82,7 +82,7 @@ footer button { border: 0; background: none; color: var(--muted); padding: 5px 0
 @media (max-width: 760px) {
   .academic-layout { width: min(620px, calc(100% - 40px)); display: block; margin-top: 32px; }
   .profile { position: static; padding: 0 0 28px; margin-bottom: 32px; border-bottom: 1px solid var(--line); }
-  .profile-photo { width: 116px; height: 116px; }
+  .profile-photo { width: 116px; height: 116px; padding: 6px; }
   .hero-portrait { margin-bottom: 17px; }
   .profile h1 { max-width: none; font-size: 26px; }
   .native-name { font-size: 21px; margin-bottom: 15px; }

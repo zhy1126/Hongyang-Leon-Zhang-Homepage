@@ -1,5 +1,12 @@
 # Changelog
 
+## Contact, portrait, and search metadata — 2026-09-30
+
+- Updated homepage and maintenance contact links to hz500@cantab.ac.uk.
+- Added space around the portrait and preserved more headroom in the circular crop.
+- Included English and Chinese names in both language versions of the page title and description.
+- Added canonical and profile metadata, refreshed the sitemap date, and linked the live homepage from the README.
+
 ## Academic homepage update — 2026-09-29
 
 - Promoted the approved white academic layout with a profile sidebar.
