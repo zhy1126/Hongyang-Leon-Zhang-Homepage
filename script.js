@@ -11,7 +11,6 @@ const zhTranslations = {
   "nav.commons": "共创",
   "nav.news": "动态",
   "nav.publications": "论文",
-  "nav.cv": "简历",
   "hero.eyebrow": "犯罪学 · 实证法律研究",
   "hero.name": "张宏扬",
   "hero.native_name": "Hongyang (Leon) Zhang",
