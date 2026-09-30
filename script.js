@@ -38,19 +38,28 @@ const zhTranslations = {
   "methods.two": "空间分析",
   "methods.three": "R 与 Python",
   "methods.four": "大语言模型辅助研究",
-  "commons.index": "研究兴趣",
-  "commons.title": "四个视角，共同追问。",
-  "commons.note": "拖动小羊，或选择一个站点",
-  "commons.center_top": "开放的",
-  "commons.center_main": "研究<br />共创空间",
-  "commons.node.criminology": "犯罪学",
-  "commons.node.law": "实证<br />法律研究",
-  "commons.node.decision": "决策<br />研究",
-  "commons.node.hai": "人机<br />交互",
-  "commons.signal": "当前问题",
-  "commons.next": "下一个视角",
-  "commons.contribute": "分享一个问题",
-  "commons.footnote": "点击后会在 GitHub 项目中打开一份结构化的社区问题表单。",
+  "nav.interests": "研究",
+  "interests.title": "研究兴趣",
+  "stream.social.name": "AI 与社会科学研究",
+  "stream.legal.name": "AI 与法律决策",
+  "stream.social.question": "AI 如何帮助我们研究社会过程、检验社会科学理论？",
+  "stream.social.body": "我探索 AI 如何支持社会科学中的测量、分析与模拟，并以理论指导研究设计和结果解释。",
+  "stream.legal.question": "AI 如何影响法律情境中的人类判断与决策？",
+  "stream.legal.body": "我研究人们如何评估和使用法律情境中的 AI 建议，重点关注依赖、信任与专业知识的作用。",
+  "tag.criminology": "犯罪学",
+  "tag.css": "计算社会科学",
+  "tag.law": "实证法律研究",
+  "tag.decision": "决策研究",
+  "tag.hai": "人机交互",
+  "study.related": "相关研究",
+  "study.details": "研究详情",
+  "study.trojan.title": "法庭中的特洛伊木马",
+  "study.trojan.status": "已获 <em>Legal and Criminological Psychology</em> 接收",
+  "study.design.label": "研究设计",
+  "study.trojan.design": "法律从业者、法学生和普通公众在收到正确或错误的 AI 建议后，对刑事与民事案例作出判断。我们区分了直接采用 AI 提供的法律依据，以及在决策结果上与 AI 建议一致这两种采纳方式。",
+  "study.findings.label": "主要发现",
+  "study.trojan.findings": "在本研究的实验条件下，相比正确建议，参与者的决策较少与错误的 AI 建议一致。我们未发现不同法律专业水平的参与者在采纳行为上存在统计上可检测的差异。",
+  "study.publication": "查看论文信息",
   "news.index": "最新 / 动态",
   "news.title": "近期动态",
   "news.acceptance.date": "2026年9月",
@@ -71,15 +80,21 @@ const zhTranslations = {
 
 const i18nNodes = document.querySelectorAll("[data-i18n]");
 const languageButtons = document.querySelectorAll("[data-lang]");
-const commonsNodes = document.querySelectorAll("[data-commons-theme]");
-const commonsLabel = document.querySelector("#commons-label");
-const commonsQuestion = document.querySelector("#commons-question");
-const commonsDescription = document.querySelector("#commons-description");
-const commonsTags = document.querySelector("#commons-tags");
-const commonsCount = document.querySelector("#commons-count");
-const interestWheel = document.querySelector("#interest-wheel");
-const interestRange = document.querySelector("#interest-range");
-const interestStory = document.querySelector(".interest-story");
+const streamControls = document.querySelector(".stream-controls");
+const streamButtons = document.querySelectorAll("[data-stream]");
+const streamPanels = document.querySelectorAll("[data-stream-panel]");
+let activeResearchStream = "legal";
+
+const selectResearchStream = (stream) => {
+  if (![...streamPanels].some((panel) => panel.dataset.streamPanel === stream)) return;
+  activeResearchStream = stream;
+  streamPanels.forEach((panel) => {
+    panel.hidden = panel.dataset.streamPanel !== stream;
+  });
+  streamButtons.forEach((button) => {
+    button.setAttribute("aria-pressed", String(button.dataset.stream === stream));
+  });
+};
 
 i18nNodes.forEach((node) => {
   node.dataset.en = node.innerHTML;
@@ -98,112 +113,6 @@ const saveLanguage = (language) => {
     localStorage.setItem("preferred-language", language);
   } catch {
     // The language still switches when storage is unavailable.
-  }
-};
-
-const commonsThemes = {
-  criminology: {
-    en: {
-      label: "Criminology & criminal justice",
-      question: "How do places, urban environments, and social contexts shape crime and safety?",
-      description: "I connect criminological theory with spatial and causal evidence to study when environments prevent, concentrate, or displace harm.",
-      tags: ["Routine activity", "Crime & place", "Prevention"],
-    },
-    zh: {
-      label: "犯罪学与刑事司法",
-      question: "地点、城市环境与社会情境如何共同塑造犯罪与安全？",
-      description: "我将犯罪学理论与空间、因果证据相结合，研究环境何时能够预防、集中或转移伤害。",
-      tags: ["日常活动理论", "犯罪与空间", "犯罪预防"],
-    },
-  },
-  law: {
-    en: {
-      label: "Empirical legal studies",
-      question: "How can we measure law as it works in practice, not only as it is written?",
-      description: "I study legal rules and professional judgment using experiments, text analysis, and computational methods.",
-      tags: ["Legal institutions", "Professional judgment", "Text analysis"],
-    },
-    zh: {
-      label: "实证法律研究",
-      question: "如何测量实践中真实运行的法律，而不只是文本中的法律？",
-      description: "我运用实验、文本分析与计算方法，研究法律规则与专业判断。",
-      tags: ["法律制度", "专业判断", "文本分析"],
-    },
-  },
-  decision: {
-    en: {
-      label: "Decision-making",
-      question: "How do information, uncertainty, and discretion shape high-stakes choices?",
-      description: "Scenario experiments trace how evidence formats, risk signals, and institutional roles change attention, confidence, and action.",
-      tags: ["Discretion", "Risk", "Experiments"],
-    },
-    zh: {
-      label: "决策研究",
-      question: "信息、不确定性与裁量权如何塑造高风险决策？",
-      description: "我通过情景实验追踪证据形式、风险信号与制度角色如何改变注意力、信心与行动。",
-      tags: ["裁量权", "风险", "实验研究"],
-    },
-  },
-  hai: {
-    en: {
-      label: "Human–AI interaction",
-      question: "When does AI augment human judgment—and when does it redirect it?",
-      description: "I examine reliance, trust, error adoption, and oversight in legal and policing decisions shaped by AI advice.",
-      tags: ["AI advice", "Trust", "Human oversight"],
-    },
-    zh: {
-      label: "人机交互",
-      question: "AI 何时增强人的判断，又何时重新导向人的判断？",
-      description: "我研究 AI 建议介入法律与警务决策后产生的依赖、信任、错误采纳与监督问题。",
-      tags: ["AI 建议", "信任", "人的监督"],
-    },
-  },
-};
-
-const commonsThemeOrder = ["criminology", "law", "decision", "hai"];
-let activeCommonsTheme = "criminology";
-
-const renderCommons = (theme) => {
-  if (!commonsThemes[theme]) return;
-  activeCommonsTheme = theme;
-  const language = document.documentElement.lang === "zh-CN" ? "zh" : "en";
-  const content = commonsThemes[theme][language];
-  const themeIndex = commonsThemeOrder.indexOf(theme);
-
-  if (commonsLabel) commonsLabel.textContent = content.label;
-  if (commonsQuestion) commonsQuestion.textContent = content.question;
-  if (commonsDescription) commonsDescription.textContent = content.description;
-  if (commonsCount) commonsCount.textContent = `${String(themeIndex + 1).padStart(2, "0")} / 04`;
-  if (commonsTags) {
-    commonsTags.replaceChildren(
-      ...content.tags.map((tag) => {
-        const item = document.createElement("span");
-        item.textContent = tag;
-        return item;
-      }),
-    );
-  }
-
-  commonsNodes.forEach((node) => {
-    const isActive = node.dataset.commonsTheme === theme;
-    node.classList.toggle("is-active", isActive);
-    node.setAttribute("aria-pressed", String(isActive));
-  });
-
-  if (interestWheel) {
-    interestWheel.style.setProperty("--interest-position", `${(themeIndex / (commonsThemeOrder.length - 1)) * 100}%`);
-    interestWheel.dataset.activeTheme = theme;
-  }
-
-  if (interestRange) {
-    interestRange.value = String(themeIndex);
-    interestRange.setAttribute("aria-valuetext", content.label);
-  }
-
-  if (interestStory) {
-    interestStory.classList.remove("is-changing");
-    void interestStory.offsetWidth;
-    interestStory.classList.add("is-changing");
   }
 };
 
@@ -241,11 +150,7 @@ const applyLanguage = (language, updateUrl = true) => {
   document.querySelector(".hero-portrait")?.setAttribute("aria-label", isChinese ? "张宏扬（Hongyang Leon Zhang）的肖像照片" : "Portrait of Hongyang Leon Zhang (张宏扬)");
   document.querySelector(".inline-meta")?.setAttribute("aria-label", isChinese ? "研究方法" : "Research methods");
   document.querySelector(".profile-photo")?.setAttribute("alt", isChinese ? "张宏扬（Hongyang Leon Zhang）的肖像照片" : "Portrait of Hongyang Leon Zhang (张宏扬)");
-  document.querySelector(".interest-stops")?.setAttribute("aria-label", isChinese ? "研究兴趣" : "Research interests");
-  interestRange?.setAttribute("aria-label", isChinese ? "选择研究兴趣" : "Choose a research interest");
-  commonsTags?.setAttribute("aria-label", isChinese ? "相关概念" : "Related concepts");
-
-  renderCommons(activeCommonsTheme);
+  streamControls?.setAttribute("aria-label", isChinese ? "选择研究主线" : "Choose a research stream");
 
   saveLanguage(activeLanguage);
 
@@ -265,13 +170,12 @@ languageButtons.forEach((button) => {
   button.addEventListener("click", () => applyLanguage(button.dataset.lang));
 });
 
-commonsNodes.forEach((node) => {
-  node.addEventListener("click", () => renderCommons(node.dataset.commonsTheme));
+streamButtons.forEach((button) => {
+  button.addEventListener("click", () => selectResearchStream(button.dataset.stream));
 });
 
-interestRange?.addEventListener("input", () => {
-  renderCommons(commonsThemeOrder[Number(interestRange.value)]);
-});
+selectResearchStream(activeResearchStream);
+if (streamControls) streamControls.hidden = false;
 
 const requestedLanguage = new URLSearchParams(window.location.search).get("lang");
 const initialLanguage = ["en", "zh"].includes(requestedLanguage)
