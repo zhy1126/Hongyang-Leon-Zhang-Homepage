@@ -20,11 +20,19 @@
 - 写入 `open`：发布完整学术主页。
 - 写入 `closed`：只发布双语维护页面，主页源码仍完整保留在仓库中。
 
-修改这个文件后提交到 `main`，GitHub Actions 会自动更新公开网站。首次发布默认设为 `closed`。
+修改这个文件后提交到 `main`，GitHub Actions 会自动更新公开网站。当前网站设为 `open`。
 
-## 社区互动功能
+## 搜索收录
 
-网站的 Research Commons 会链接到仓库的 GitHub Issues，并自动打开 `Share a research question` 表单。请在仓库 **Settings → General → Features** 中确保 **Issues** 已启用。
+部署成功只表示网站已发布，不代表搜索引擎已经收录。
+
+1. 在 Bing Webmaster Tools 和 Google Search Console 中添加并验证主页地址：`https://zhy1126.github.io/Hongyang-Leon-Zhang-Homepage/`。
+2. 提交站点地图：`https://zhy1126.github.io/Hongyang-Leon-Zhang-Homepage/sitemap.xml`。
+3. 使用网址检查功能确认发现、抓取和收录状态，再根据具体报告处理问题。
+
+这是部署在子目录中的 GitHub Pages 项目站点。搜索爬虫读取的是域名根目录的 `https://zhy1126.github.io/robots.txt`，不会把本项目子目录里的同名文件用作抓取规则。根目录暂未建站时，应在站长工具中直接提交站点地图。
+
+IndexNow 验证文件保存在项目目录中，提交时必须提供指向该文件的 `keyLocation`。HTTP 200 表示收到提交，HTTP 202 表示收到提交但仍在验证密钥；两者都不等于已收录。
 
 ## 以后更新
 

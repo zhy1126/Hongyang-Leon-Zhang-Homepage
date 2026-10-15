@@ -1,16 +1,19 @@
-# Hongyang Zhang — Academic Homepage
+# Hongyang Leon Zhang (张宏扬) | Academic Homepage
 
-A lightweight bilingual academic homepage for Hongyang Zhang, built with plain HTML, CSS, and JavaScript. There is no package manager or build step.
+## [Visit Hongyang Leon Zhang’s academic homepage →](https://zhy1126.github.io/Hongyang-Leon-Zhang-Homepage/)
+
+Hongyang Leon Zhang (张宏扬) researches how AI can support social science research and how it shapes human judgment and decision-making in legal settings. He holds an MPhil in Criminology from the University of Cambridge.
+
+This repository contains the source files for the bilingual academic homepage linked above. The website is built with plain HTML, CSS, and JavaScript; there is no package manager or build step.
 
 ## Highlights
 
 - English / Simplified Chinese switching with a shareable `?lang=zh` view
 - Responsive layout and accessible mobile navigation
-- Academic two-column layout with a sticky profile, portrait, contact links, CV, and section navigation
+- Academic two-column layout with a sticky profile, portrait, email, and section navigation
 - Compact bilingual news and updates section
 - Interactive research interests connecting criminology, empirical legal studies, decision-making, and human–AI interaction
-- Selected research led by the ongoing CrimSense project
-- Downloadable CV and responsive portrait
+- Publications in a consistent APA-style format
 - Automatic GitHub Pages deployment through GitHub Actions
 
 ## Live repository
@@ -54,12 +57,11 @@ After changing the value, commit and push the file to `main`. GitHub Actions wil
 ## Update the content
 
 - Main content and project structure: `index.html`
-- Simplified Chinese copy and interactive Research Commons data: `script.js`
+- Simplified Chinese copy and research stream interactions: `script.js`
 - Homepage colors, typography, layout, and responsive behavior: `academic.css`
 - Error and maintenance page styling: `styles.css`
 - Portrait: replace `assets/Hongyang_Zhang.jpg`, keeping the filename
 - CV: replace `assets/Hongyang_Zhang_CV.pdf`, keeping the filename
-- Community question form: `.github/ISSUE_TEMPLATE/research-question.yml`
 - Public-site visibility switch: `site-status.txt`
 - Closed-site message: `maintenance.html`
 
@@ -69,3 +71,11 @@ After changing the value, commit and push the file to `main`. GitHub Actions wil
 - Add links or DOIs to publications when available.
 - Check both language versions after editing shared content.
 - Verify the existing `/phd-application-tracker/` page after deployment.
+
+## Search indexing
+
+- Canonical homepage: <https://zhy1126.github.io/Hongyang-Leon-Zhang-Homepage/>
+- Sitemap: <https://zhy1126.github.io/Hongyang-Leon-Zhang-Homepage/sitemap.xml>
+- Verify the homepage URL prefix in Bing Webmaster Tools and Google Search Console, submit the sitemap, and inspect the homepage URL to check its actual indexing status.
+- This is a GitHub Pages project site. Crawlers look for `robots.txt` at `https://zhy1126.github.io/robots.txt`; the copy inside this project’s subdirectory is not a host-level robots file. Submit the sitemap directly through the webmaster tools while no root site is configured.
+- A successful Pages deployment or IndexNow submission confirms publication or receipt, respectively. Neither confirms search indexing or ranking.

@@ -1,3 +1,6 @@
+# GitHub Pages serves this file inside the project subdirectory.
+# Crawlers only read https://zhy1126.github.io/robots.txt.
+# Submit the sitemap directly in webmaster tools until a root site is configured.
 User-agent: *
 Allow: /
 
